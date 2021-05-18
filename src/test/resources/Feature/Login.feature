@@ -54,7 +54,7 @@ Feature: Login in Swag Labs
     And The Swaglabs ecommerce is opened
 
   @Test
-  Scenario: 6. Verify alert "Password is required"
+  Scenario: 6. Verify alert "Username is required"
     Given The user is on login page
     When The user enters only a valid password "secret_sauce"
     And The user logs in
