@@ -1,7 +1,6 @@
 #	Test Case
 1	Successful login for valid user
 2	Successful login for valid user pressing Enter key
-3	Successful login for invalid user
 4	Successful login due to slow loading
 5	Successful login in different sessions
 6	Verify alert "Password is required"
@@ -12,3 +11,4 @@
 11	Failed login by entering blank fields
 12	Failed login for locked out user
 13	Failed login due to server failure
+3	Failed login for invalid user
