@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage {
     private WebDriver driver;
-    private WebDriver firefoxDriver;
     private WebDriverWait wait;
 
     //Variables and Locators

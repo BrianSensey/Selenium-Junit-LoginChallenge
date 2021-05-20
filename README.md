@@ -11,7 +11,11 @@ It supports Java 8 and generate json or html reports as well.
 
 Node.JS: Install from the site - https://nodejs.org/en/ take the LTS version based on your Operating system. Please make sure you install NodeJS globally.
 
-JDK 1.8: It's mandatory, install JDK 1.8+ and make sure class path is set properly. JAVA is require to start Selenium Server on your local environment nothing else.
+JDK 1.8: It's mandatory, install JDK 1.8+ and make sure class path is set properly. JAVA is required to start Selenium Server on your local environment nothing else.
+
+Cucumber for Java : It's mandatory install this plugin in Settings section of the IDE.
+
+Gherkin: It's mandatory install this plugin in Settings section of the IDE.
 
 ###Selenium
 
@@ -21,6 +25,7 @@ To run your test you must have some dependencies in the pom.xml file, or it will
 
 To execute the entire test suite in local development, you only need to use IntelliJ IDEA and execute "Run Test". This executes all features in the `src/test/resources/feature/*.feature` directory.
 
+Previously, you need locate `pom.xml` file, right click and choose `Maven/Reload project`
 ###The Hook
 
 This project uses hooks to setup and execute tests in specific ways. The configuration is fully customizable, and different functions can be invoked before, during and after each test or test suite. Hooks file can be found in the `src/test/java/definitions/hooks` directory.
