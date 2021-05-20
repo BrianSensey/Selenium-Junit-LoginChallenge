@@ -66,13 +66,6 @@ public class LoginDefinitions {
         login.pressEnter();
     }
 
-    @And("Six identical images of products are displayed in the middle")
-    public void sixIdenticalImagesOfProductsAreDisplayedInTheMiddle() {
-        main.ScrollDown();
-        main.DownloadImages();
-        //main.VerifyImages();
-    }
-
     @When("The user enters only a valid password {string}")
     public void theUserEntersOnlyAValidPassword(String password) {
         login.EnterPassword(password);
@@ -112,5 +105,10 @@ public class LoginDefinitions {
     @And("The user is on login page in a Firefox browser")
     public void theUserIsOnLoginPageInAFirefoxBrowser()  {
         Hooks.driver.get("https://www.saucedemo.com/");
+    }
+
+    @And("A popup is displayed for update information")
+    public void aPopupIsDisplayedForUpdateInformation() {
+        main.VerifyPopupPersonalInfo();
     }
 }

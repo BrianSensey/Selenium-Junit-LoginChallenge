@@ -40,6 +40,9 @@ public class MainPage {
     @FindBy(className = "social") private WebElement lnk_socialMedia;
     @FindBy(className = "footer_copy") private WebElement lbl_rightsReserved;
 
+    //Popups
+    @FindBy(id = "alert_personalInforForm") private WebElement popup_alertInfo;
+
     //Constructor
     public MainPage(WebDriver d) {
         driver = d;
@@ -54,7 +57,7 @@ public class MainPage {
 
     public  void VerifyErrorURL(){
         currentUrl = driver.getCurrentUrl();
-        Assert.assertEquals(currentUrl, "https://www.saucedemo.com/maintenance.html" );
+        Assert.assertEquals(currentUrl, "https://saucelabs.com/error/404" );
     }
 
     public  void ScrollDown(){
@@ -67,6 +70,7 @@ public class MainPage {
         Assert.assertTrue(lst_products.size() == 6);
     }
 
+    /*
     public  void DownloadImages(){
         String src;
         BufferedImage bufferedImage;
@@ -84,7 +88,7 @@ public class MainPage {
             }
         }
     }
-/*
+
     public  void VerifyImages(){
         BufferedImage img1 = ImageIO.read(new File("images/1.jpg"));
         BufferedImage img2 = ImageIO.read(new File("images/2.jpg"));
@@ -110,7 +114,7 @@ public class MainPage {
         System.out.println(bufferedImagesEqual);
         Assert.assertTrue(bufferedImagesEqual);
     }
-*/
+    */
     public  void VerifyShoppingCartIcon(){
         wait.until(ExpectedConditions.visibilityOf(img_shoppingCart));
         Assert.assertTrue(img_shoppingCart.isDisplayed());
@@ -145,6 +149,13 @@ public class MainPage {
         wait.until(ExpectedConditions.visibilityOf(img_error404));
         Assert.assertTrue(img_error404.isDisplayed());
     }
+
+    public  void VerifyPopupPersonalInfo(){
+        wait.until(ExpectedConditions.visibilityOf(popup_alertInfo));
+        Assert.assertTrue(popup_alertInfo.isDisplayed());
+        Assert.assertEquals(popup_alertInfo.getText(),"WARNING! YOU NEED UPDATE YOUR INFO");
+    }
+
 
     public  void VerifyRightImageFooter(){
         wait.until(ExpectedConditions.visibilityOf(img_robotFooter));
